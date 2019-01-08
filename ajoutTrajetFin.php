@@ -1,15 +1,21 @@
 <?php
-require_once('connexion.php');
-    $ville = $_POST['choixVille'];
-    $nbPlace = $_POST['nombrePlace'];
-    $frequence = $_POST['choixFrequence'];
-    $type = $_POST['choixType'];
-    $date = $_POST['dateDepart'];
-    $heure = $_POST['heureDepart'];
-    $stmt = $db->prepare('INSERT INTO trajet (nbmax,frequence,type,date,heure,codeVille) VALUES (:nb, :frequence, :type,:date:heure:codeville)');
+    require_once('connexion.php');
+    $ville = $_GET['choixVille'];
+    $nbPlace = $_GET['nombrePlace'];
+    $frequence = $_GET['choixFrequence'];
+    $type = $_GET['choixType'];
+    $date = $_GET['dateDepart'];
+    $heure = $_GET['heureDepart'];
+    $resultat = $connection->query("select codePostal from ville where nom = '".$ville."'");
+    $resultat->setFetchMode(PDO::FETCH_OBJ);
+    $codeVille = $resultat->fetch();
+    echo $codeVille->codePostal;
+
+    $stmt = 'INSERT INTO trajet (nbmax,frequence,typeTrajet,dateTrajet,heure,codeVille) VALUES ('.$nbPlace.',"'.$frequence.'","'.$type.'","'.$date.'","'.$heure.'",'.$codeVille->codePostal.')';
+    echo $stmt;
     try
     {
-        $stmt->execute(array(':nb' => $nbPlace,':frequence' => $frequence, ':type' => $type, ':date' => $date, ':heure' => $heure, ':codeVille' => $codeVille));
+        $connection->exec($stmt);
     }
     catch (Exception $e) 
     {
