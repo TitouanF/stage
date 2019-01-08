@@ -3,10 +3,10 @@
 ?>
 <html>
   <head>
-      <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
-      <title>Connexion</title>
-      <link rel=stylesheet type="text/css" href="style.css"/>
-    </head>
+    <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+    <title>Connexion</title>
+    <link rel=stylesheet type="text/css" href="style.css"/>
+  </head>
   <body>
       <?php
         //Vérifie si l'utilisateur est connecté avant de montrer la page
