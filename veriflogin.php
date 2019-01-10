@@ -2,7 +2,7 @@
   //Permet de ne pas afficher les erreurs au client quand il rentre des identifiants non valide
   ini_set("display_errors",0);error_reporting(0);
   session_start();
-  $_SESSION['MCli'] = $_POST[idSalarie];
+  $_SESSION['idSalarie'] = $_POST[idSalarie];
 ?>
 <html>
   <head>
