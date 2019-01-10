@@ -11,16 +11,19 @@
         $select = $connection->query("SELECT * FROM salarie");  
         // Les résultats retournés par la requête seront traités en 'mode' objet   
         echo "choix d'une salarie : ";
-        echo "<select id='choixVille' name='choixVille' required>";
+        echo "<select id='choixPersonne' name='choixPersonne' required>";
         while($enregistrement = $select->fetch())
         {
             if ($enregistrement['nom'] != 'admin')
             {
                 echo "<option>".$enregistrement['nom']."</option>";
-            }
-         
+            }        
         }
         echo "</select>";
       ?>
+    <br> 
+    <a href="ajoutSalarie.php"><button >Ajouter un salarie</button></a>
+    <button>Supprimer un salarie</button>
+    <button>Modifier un salarie</button>
   </body>
 </html>
