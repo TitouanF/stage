@@ -24,5 +24,7 @@
         }
       ?>
   ADMIN
+  <BR><BR>
+  <a href="deconnection.php"><button>Deconnexion</button></a>
   </body>
 </html>
