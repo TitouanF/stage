@@ -24,6 +24,6 @@
     <br> 
     <a href="ajoutSalarie.php"><button >Ajouter un salarie</button></a>
     <button>Supprimer un salarie</button>
-    <button>odifier un salarie</button>
+    <button>Modifier un salarie</button>
   </body>
 </html>
