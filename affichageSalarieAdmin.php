@@ -1,3 +1,6 @@
+<?php
+  session_start()
+?>
 <html>
   <head>
     <title>ajouter un trajet</title>
@@ -26,4 +29,6 @@
     <button>Supprimer un salarie</button>
     <button>Modifier un salarie</button>
   </body>
+  <script>
+  </script>
 </html>

@@ -15,13 +15,30 @@
         echo "choix d'une ville : ";
         echo "<select id='choixVille' name='choixVille' required>";
         $ij = 0;
+        $tabVille="[";
+        $max = 0;
         while($enregistrement = $select->fetch())
         {
+          $nom = $enregistrement['nom'];
+          $max += 1;     
           $inventaire[$ij] = $enregistrement['nom'];
           echo "<option>".$enregistrement['nom']."</option>";
           $ij = $ij + 1;
+          // Constitution du "tableau" javascript
+          if ($ij > 1)
+          {
+            $tabVille .= ",'$nom'";
+          }
+          else
+          {
+            $tabVille .= "'$nom'";
+          }
+
         }
+        $tabVille .= "]";
+        
         echo "</select>";
+        echo "tableau javascript : " . $tabVille;
       ?>
       <BR>
       nombre de places : <input type="number" id="nombrePlace" name="nombrePlace" min="1" max="9" required>
@@ -43,30 +60,35 @@
       <BR>
       Heure trajet : <input type="time" id="heureDepart" name="heureDepart"min="0:00" max="23:59" required>
       <BR>      
-      nombre d'étapes : <input type="number" id="nombreEtapes" name="nombreEtapes" min="0" max="9" text="0" required> <button type="button" id="etapes" onclick="afficheEtapes(<?php $inventaire?>)">ok</button>
+      nombre d'étapes : <input type="number" id="nombreEtapes" name="nombreEtapes" min="0" max="9" text="0" required> <button type='button' id='etapes' onclick="afficheEtapes()">ok</button>
       <BR>
       <span id="AfficheEtapes"></span>
       <input type="submit" name="valid" value="ajouter"/>    
     </form> 
     <script>
-      function afficheEtapes(tabVilles)
+      function afficheEtapes()
       {
-        var i = 1
-        alert(tabVilles[0]);
-      
-       /* var max = document.getElementById("nombreEtapes").value;
-          alert(max);
-          for (i=0;i<max;i++)
+        $('#AfficheEtapes').html("");  
+        tabVille = <?php echo $tabVille ?>;
+        var i = 1;
+        var ii;
+        var maxLoop = <?php echo $max?>;
+        var max = document.getElementById("nombreEtapes").value;
+        var texte ="";
+       for (i=0;i<max;i++)
+        {
+          iafficher = i + 1;
+          texte = "Choix de l'étape n°"+iafficher+" : <select id='choixVille' name='choixEtape"+iafficher+"' required><option>test</option>";
+
+          for(ii=0;ii<maxLoop;ii ++)
           {
-            iafficher = i + 1;
-            var affRepas = document.getElementById("AfficheEtapes");
-            affRepas.innerHTML = 
-      
-            $('#AfficheEtapes').append("Choix etape "+iafficher+" : <select id='choixVille' name='choixEtape"+iafficher+"' required><option>test</option>");
-          
-            
-            $('#AfficheEtapes').append("</select><BR>");
-              */      
+            texte += "<option>"+tabVille[ii]+"</option>";
+          }
+          ii = 0;
+          texte +="</select><BR>"
+          $('#AfficheEtapes').append(texte);  
+          texte = "";
+        }             
       }
       </script>
   </body>
