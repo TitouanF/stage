@@ -5,6 +5,21 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </head>
   <body>
+  <?php
+    session_start();
+    if ($_SESSION['verif'] == "admin")
+          {
+            
+          }
+          elseif ($_SESSION['verif'] == "salarie")
+          {
+            header("Location: accueilsalarie.php");
+          }
+          else
+          {
+            header("Location: afficherlogin.php");
+          }
+    ?>
     <h1>Ajout d'un nouveau salarié</h1>
     <form id="ajoutSalarie" action="ajoutSalarieFin.php" method="post">
        identifiant : <input type="text" name="idSalarie" pattern="^[a-zA-Z0-9]+$"><BR>

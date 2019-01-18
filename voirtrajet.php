@@ -1,5 +1,17 @@
 <?php
-  session_start()
+  session_start();
+  if ($_SESSION['verif'] == "admin")
+  {
+    header("Location: accueiladmin.php");
+  }
+  elseif ($_SESSION['verif'] == "salarie")
+  {
+    
+  }
+  else
+  {
+    header("Location: afficherlogin.php");
+  }
 ?>
 
 <html>
