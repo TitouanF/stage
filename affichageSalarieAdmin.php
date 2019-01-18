@@ -1,3 +1,18 @@
+<?php
+  session_start();
+  if ($_SESSION['verif'] == "admin")
+  {
+    
+  }
+  elseif ($_SESSION['verif'] == "salarie")
+  {
+    header("Location: accueilsalarie.php");
+  }
+  else
+  {
+    header("Location: afficherlogin.php");
+  }
+?>
 <html>
   <head>
     <title>Salaries</title>
@@ -41,4 +56,6 @@
     <button>Supprimer un salarie</button>
     <button>Modifier un salarie</button>
   </body>
+  <script>
+  </script>
 </html>
