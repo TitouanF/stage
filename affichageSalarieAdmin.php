@@ -1,9 +1,24 @@
 <html>
   <head>
-    <title>ajouter un trajet</title>
+    <title>Salaries</title>
     <link rel=stylesheet type="text/css" href="style.css"/>
   </head>
   <body>
+  <?php
+      //Vérifie si l'utilisateur est connecté avant de montrer la page
+      if ($_SESSION['verif'] == "admin")
+      {
+
+      }
+      elseif ($_SESSION['verif'] == "salarie")
+      {
+        header("Location: accueilsalarie.php");
+      }
+      else
+      {
+        header("Location: afficherlogin.php");
+      }
+  ?>
     <h1>modifier salarie</h1>
       <?php
         require_once('connexion.php'); // once : le fichier ne peut être inclus qu'une fois

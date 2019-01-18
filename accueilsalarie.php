@@ -1,10 +1,10 @@
 <?php
-  session_start()
+  session_start();
 ?>
 <html>
   <head>
       <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
-      <title>Connexion</title>
+      <title>Accueil</title>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
@@ -37,9 +37,10 @@
     echo"Connecte en tant que : ". $_SESSION['leprenom'] ." ". $_SESSION['lenom'] ."";
     echo"<BR><BR>";
   ?>
-  <button>Proposer trajet</button>
-  <a href="voirtrajet.php"><button>Voir Trajet</button></a>
-  <button>Voir Inscription</button>
+  <a href="ajoutTrajet.php"><button>Proposer trajet</button></a>
+  <a href="voirmesinscriptiontrajet.php"><button>Voir mes inscription Trajets</button></a>
+  <a href="voirpropositiontrajet.php"><button>Voir les propositions de Trajets</button></a>
+  <a href="voirmespropositiontrajet.php"><button>Voir mes propositions de Trajets</button></a>
   <BR><BR>
   <a href="deconnection.php"><button>Deconnexion</button></a>
   </body>
