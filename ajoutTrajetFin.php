@@ -39,7 +39,7 @@
             for ($i = 1; $i <= $max; $i++)
                 {
                     $teste = "choixEtape".$i;
-                    $nomVille = $_GET[$teste];
+                    $nomVille = $_POST[$teste];
                     
                     try
                         {
