@@ -27,6 +27,7 @@
       require_once('connexion.php');
       // Envoi de la requête vers MySQL
       $req=$connection->query("DELETE FROM inscription WHERE idSalarie = '$idsal' AND idTrajet = '$idtraj'");
+      $req=$connection->query("UPDATE trajet SET nbmax = nbmax + 1 WHERE trajet.identifiant = '$idtraj'");
       header("Location: desinscriretrajetfin.php?idtrajet=".$idtraj."");
     ?>
   </body>

@@ -21,4 +21,4 @@
     <BR>
     <a href=""><button>valider</button></a>
     <a href="affichageSalarieAdmin.php"><button>annuler</button></a>
-</html> 
+</html>
