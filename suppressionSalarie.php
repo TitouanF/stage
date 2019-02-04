@@ -3,10 +3,11 @@
 ?>
 <html>
     <h1> récapitulatif des informations du salarié </h1>
+    <form action="suppressionSalarieFin.php" method="post">
     <?php
-        $id = "titouan";
+        $nom = $_POST['choixPersonne'];
         require_once('connexion.php');
-        $requete = "SELECT * from salarie where identifiant ='".$id."'";
+        $requete = "SELECT * from salarie where nom ='".$nom."'";
         $resultat = $connection->query($requete);
         while($enregistrement = $resultat->fetch())
         {
@@ -16,9 +17,11 @@
            echo "<BR>email : " . $enregistrement["email"];
            echo "<BR>preference : " . $enregistrement["preferences"];
            echo "<BR>ville : " . $enregistrement["ville"];
+          echo ' <input type="hidden" name="id" value="'. $enregistrement["identifiant"].'">';
         }
-    ?>
+    ?> 
     <BR>
-    <a href=""><button>valider</button></a>
-    <a href="affichageSalarieAdmin.php"><button>annuler</button></a>
-</html>
+    <input type='submit' value='Supprimer'>
+    </form>
+    <a href="accueiladmin.php"><button>annuler</button></a>
+</html> 

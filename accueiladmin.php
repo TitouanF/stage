@@ -1,32 +1,62 @@
 <?php
   session_start();
+  if ($_SESSION['verif'] == "admin")
+  {
+    
+  }
+  elseif ($_SESSION['verif'] == "salarie")
+  {
+    header("Location: accueilsalarie.php");
+  }
+  else
+  {
+    header("Location: afficherlogin.php");
+  }
 ?>
 <html>
   <head>
-    <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
-    <title>Connexion</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <title>Salaries</title>
+    <link rel=stylesheet type="text/css" href="style.css"/>
   </head>
   <body>
-      <?php
-        //Vérifie si l'utilisateur est connecté avant de montrer la page
-        if ($_SESSION['verif'] == "admin")
-        {
+  <?php
+      //Vérifie si l'utilisateur est connecté avant de montrer la page
+      if ($_SESSION['verif'] == "admin")
+      {
 
-        }
-        elseif ($_SESSION['verif'] == "salarie")
+      }
+      elseif ($_SESSION['verif'] == "salarie")
+      {
+        header("Location: accueilsalarie.php");
+      }
+      else
+      {
+        header("Location: afficherlogin.php");
+      }
+  ?>
+    <h1>Accueil admin</h1>
+      <?php
+        require_once('connexion.php'); // once : le fichier ne peut être inclus qu'une fois
+        // Envoi de la requête vers MySQL   
+        $select = $connection->query("SELECT * FROM salarie");  
+        // Les résultats retournés par la requête seront traités en 'mode' objet   
+        echo "<ul><lh>Liste des salariés inscrits</lh>";
+        while($enregistrement = $select->fetch())
         {
-          header("Location: accueilsalarie.php");
+            if ($enregistrement['nom'] != 'admin')
+            {
+                echo "<li>".$enregistrement['nom']." ".$enregistrement['prenom']."</li>";
+            }        
         }
-        else
-        {
-          header("Location: afficherlogin.php");
-        }
+
+        echo "</ul>";
       ?>
-  ADMIN
-  <BR><BR>
+    <br> 
+    <a href="ajoutSalarie.php"><button >Ajouter un salarie</button></a>
+    <a href="choixSalarieSuppression.php"><button>Supprimer un salarie</button></a>
+    <BR>
   <a href="deconnection.php"><button>Deconnexion</button></a>
   </body>
+  <script>
+  </script>
 </html>

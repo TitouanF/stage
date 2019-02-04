@@ -41,6 +41,7 @@
   <a href="voirmesinscriptiontrajet.php"><button>Voir mes inscription Trajets</button></a>
   <a href="voirpropositiontrajet.php"><button>Voir les propositions de Trajets</button></a>
   <a href="voirmespropositiontrajet.php"><button>Voir mes propositions de Trajets</button></a>
+  <a href="ModificationSalarie.php"><button>Modifier mes informations</button></a>
   <BR><BR>
   <a href="deconnection.php"><button>Deconnexion</button></a>
   </body>
