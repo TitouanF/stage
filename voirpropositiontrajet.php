@@ -52,7 +52,7 @@
             //echo "".$idSalarie."";
             require_once('connexion.php');
             
-            $req=$connection->query("SELECT trajet.identifiant idt, ville.nom nom, trajet.dateTrajet datet, trajet.heure heure, trajet.typeTrajet typet, trajet.frequence FROM ville, trajet WHERE ville.codePostal = trajet.codeVille AND (trajet.idSalarie <> '$idSalarie' OR trajet.idSalarie IS NULL) AND ville.nom not in( SELECT ville.nom FROM ville, trajet, inscription WHERE ville.codePostal = trajet.codeVille AND trajet.identifiant = inscription.idTrajet AND inscription.idSalarie = '$idSalarie' )");
+            $req=$connection->query("SELECT trajet.identifiant idt, ville.nom nom, trajet.dateTrajet datet, trajet.heure heure, trajet.typeTrajet typet, trajet.frequence, trajet.nbmax FROM ville, trajet WHERE ville.codePostal = trajet.codeVille AND (trajet.idSalarie <> '$idSalarie' OR trajet.idSalarie IS NULL) AND ville.nom not in( SELECT ville.nom FROM ville, trajet, inscription WHERE ville.codePostal = trajet.codeVille AND trajet.identifiant = inscription.idTrajet AND inscription.idSalarie = '$idSalarie')");
 
             $req->setFetchMode(PDO::FETCH_OBJ);
 
@@ -76,7 +76,15 @@
                     echo("<td>".$enregistrement->typet."</td>");
                     echo("<td>".$enregistrement->frequence."</td>");
                     echo("<td><button>Id trajet : ".$enregistrement->idt."</button></td>");
-                    echo("<td><a href='inscriptiontrajet.php?idtrajet=".$enregistrement->idt."'><button>S'inscrire</button></a></td></tr>");
+                    $nbplace = $enregistrement->nbmax;
+                    if($nbplace == 0)
+                    {
+                        echo("<td>Aucune place disponible</td></tr>");
+                    }
+                    else
+                    {
+                        echo("<td><a href='inscriptiontrajet.php?idtrajet=".$enregistrement->idt."'><button>S'inscrire</button></a></td></tr>");
+                    }
                 }
             }
             elseif($nbr == 0)

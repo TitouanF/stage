@@ -81,27 +81,26 @@
       <script>
         function afficheEtapes()
         {
-          $('#AfficheEtapes').html("");  
+          $('#AfficheEtapes').html("");
           tabVille = <?php echo $tabVille ?>;
           var i = 1;
           var ii;
           var maxLoop = <?php echo $max?>;
           var max = document.getElementById("nombreEtapes").value;
           var texte ="";
-        for (i=0;i<max;i++)
-          {
-            iafficher = i + 1;
-            texte = "Choix de l'étape n°"+iafficher+" : <select id='choixVille' name='choixEtape"+iafficher+"' required>";
-
-            for(ii=0;ii<maxLoop;ii ++)
+          for (i=0;i<max;i++)
             {
-              texte += "<option>"+tabVille[ii]+"</option>";
+              iafficher = i + 1;
+              texte = "Choix de l'étape n°"+iafficher+" : <select id='choixVille' name='choixEtape"+iafficher+"' required>";
+              for(ii=0;ii<maxLoop;ii ++)
+              {
+                texte += "<option>"+tabVille[ii]+"</option>";
+              }
+              ii = 0;
+              texte +="</select><BR>";
+              $('#AfficheEtapes').append(texte);
+              texte = "";
             }
-            ii = 0;
-            texte +="</select><BR>"
-            $('#AfficheEtapes').append(texte);  
-            texte = "";
-          }             
         }
       </script>
   </body>
