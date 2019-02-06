@@ -1,4 +1,18 @@
 <?php 
+ session_start();
+ //Vérifie si l'utilisateur est connecté avant de montrer la page
+ if ($_SESSION['verif'] == "admin")
+ {  
+    
+ }
+ elseif ($_SESSION['verif'] == "salarie")
+ {
+   header("Location: accueilsalarie.php");
+ }
+ else
+ {
+   header("Location: afficherlogin.php");
+ }
     require_once('connexion.php'); // once : le fichier ne peut être inclus qu'une fois
     // Envoi de la requête vers MySQL   
     $select = $connection->query("SELECT * FROM salarie");  

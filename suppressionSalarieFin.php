@@ -1,4 +1,27 @@
 <?php
+     session_start();
+     //Vérifie si l'utilisateur est connecté avant de montrer la page
+     if (!issset($_POST['id']))
+     {
+
+
+     if ($_SESSION['verif'] == "admin")
+     {  
+        
+     }
+     elseif ($_SESSION['verif'] == "salarie")
+     {
+       header("Location: accueilsalarie.php");
+     }
+     else
+     {
+       header("Location: afficherlogin.php");
+     }
+    }
+    else
+    {
+        header("Location: suppressionSalarie.php");
+    }
     $id = $_POST['id'];
     require_once('connexion.php');
     $requete = "SELECT * from trajet where idSalarie ='".$id."'";
