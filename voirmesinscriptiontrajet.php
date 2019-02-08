@@ -79,7 +79,8 @@
                 echo("<th>Heure</th>");
                 echo("<th>Type</th>");
                 echo("<th>Frequence</th>");
-                echo("<th colspan='2'>Action</th>");
+                echo("<th>Etapes</th>");
+                echo("<th colspan='1'>Action</th>");
                 echo("</tr>");
                 while($enregistrement = $req->fetch())
                 {
@@ -88,7 +89,25 @@
                     echo("<td>".$enregistrement->heure."</td>");
                     echo("<td>".$enregistrement->typet."</td>");
                     echo("<td>".$enregistrement->frequence."</td>");
-                    echo("<td><button>Id trajet : ".$enregistrement->idt."</button></td>");
+                    
+                    $req2=$connection->query("SELECT ville.nom nom FROM ville, trajet, etapes WHERE ville.codePostal = etapes.CodePostal AND trajet.identifiant = etapes.idTrajet AND trajet.identifiant = '$enregistrement->idt'");
+                    $req2->setFetchMode(PDO::FETCH_OBJ);
+                    $nbr2=$req2->rowCount();
+
+                    echo("<td><select>");
+                    if($nbr2 > 0)
+                    {
+                        while($enregistrement2 = $req2->fetch())
+                        {
+                            echo("<option>".$enregistrement2->nom."</option>");
+                        }
+                    }
+                    elseif($nbr2 == 0)
+                    {
+                        echo("<option>Aucune etape</option>");
+                    }       
+                    echo("</select></td>");
+
                     echo("<td><a href='desinscriretrajet.php?idtrajet=".$enregistrement->idt."'><button>Se desinscrire</button></a></td></tr>");
                 }
             }
