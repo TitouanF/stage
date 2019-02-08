@@ -9,7 +9,22 @@
 
       if ($_SESSION['verif'] == "salarie")
           {
-              
+            require_once('connexion.php');
+            $idSalarie = $_SESSION['idSalarie'];
+            $idTrajet = $_GET['idtrajet'];
+            $requet = $connection->query("SELECT trajet.idSalarie idsal FROM trajet WHERE identifiant = '$idTrajet'");
+            $requet->setFetchMode(PDO::FETCH_OBJ);
+            while($enregist = $requet->fetch())
+            {
+              if ($enregist->idsal == $idSalarie)
+              {
+      
+              }
+              else
+              {
+                header("Location: voirmespropositiontrajet.php");
+              }
+            }
           }
           elseif ($_SESSION['verif'] == "admin")
           {
@@ -24,8 +39,7 @@
   {
       header("Location: afficherlogin.php");
   }
-  $idSalarie = $_SESSION['idSalarie'];
-  $idTrajet = $_GET['idtrajet'];
+
 
   //Vérifie si l'utilisateur est connecté avant de montrer la page
   if ($_SESSION['verif'] == "salarie" && isset($_GET['idtrajet']))
