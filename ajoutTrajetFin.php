@@ -24,7 +24,7 @@
                 {
                     echo "ajout impossible : ", $e->getMessage();
                 }
-            $sql = "SELECT max(identifiant) as id FROM `trajet` WHERE 1";
+            $sql = "SELECT max(identifiant) as id FROM `trajet`";
             try
                 {    
                     $effectuer = $connection->query($sql);

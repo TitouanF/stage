@@ -85,7 +85,7 @@
           tabVille = <?php echo $tabVille ?>;
           var i = 1;
           var ii;
-          var maxLoop = <?php echo $max?>;
+          var maxLoop = <?php echo $max ?>;
           var max = document.getElementById("nombreEtapes").value;
           var texte ="";
           for (i=0;i<max;i++)

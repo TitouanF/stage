@@ -4,20 +4,26 @@
      if (!issset($_POST['id']))
      {
 
-
-     if ($_SESSION['verif'] == "admin")
-     {  
-        
-     }
-     elseif ($_SESSION['verif'] == "salarie")
-     {
-       header("Location: accueilsalarie.php");
-     }
-     else
-     {
-       header("Location: afficherlogin.php");
-     }
-    }
+        if (issset($_SESSION['verif']))
+        {
+            if ($_SESSION['verif'] == "admin")
+            {  
+                
+            }
+            elseif ($_SESSION['verif'] == "salarie")
+            {
+            header("Location: accueilsalarie.php");
+            }
+            else
+            {
+            header("Location: afficherlogin.php");
+            }
+        }
+        else
+        {
+            header("Location: afficherlogin.php");
+        }
+        }
     else
     {
         header("Location: suppressionSalarie.php");
