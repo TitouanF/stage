@@ -29,10 +29,10 @@
 ?>
 <html>
   <form id="modifierSalarie" action="modificationSalarieFin.php" method="post">
-       numero rue : <input type="number" name="numeroRue" value='<?php echo $numAdresse ?>' pattern="^[0-9]+$"><BR>
-       nom rue : <input type="text" name="nomRue" value='<?php echo $voieAdresse ?>' pattern="^[a-zA-Z0-9\s]+$" ><BR>
-       email : <input type="email" name="mailSalarie"  value='<?php  echo $email ?>' pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"><BR>
-       numéro téléphone (tout attaché) : <input type="text" value='<?php echo $telephone ?>' name="numeroSalarie" pattern="^0[1-6]{1}(([0-9]{2}){4})|((\s[0-9]{2}){4})|((-[0-9]{2}){4})$"><BR>
+       numero rue : <input type="number" name="numeroRue" min="1" value='<?php echo $numAdresse ?>' pattern="^[0-9]+$" required><BR>
+       nom rue : <input type="text" name="nomRue" value='<?php echo $voieAdresse ?>' pattern="^[a-zA-Z0-9\s]+$"required><BR>
+       email : <input type="email" name="mailSalarie"  value='<?php  echo $email ?>' pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required><BR>
+       numéro téléphone (tout attaché) : <input type="text" value='<?php echo $telephone ?>' name="numeroSalarie" pattern="^0[1-6]{1}(([0-9]{2}){4})|((\s[0-9]{2}){4})|((-[0-9]{2}){4})$" required><BR>
        préférences : 
        <select id="choixType" name="choixType" required>
        <?php 
@@ -82,7 +82,7 @@
             echo "</select>";
             ?>
        </select><BR>
-       <input type="submit" value="Valider">
-       <a href="accueilsalarie.php"><button>Annuler les modifications</button></a>
+       <input type="submit" value="Valider">   
        </form>
+       <a href="accueilsalarie.php"><button>Annuler les modifications</button></a>
 </html>

@@ -69,7 +69,7 @@
           <option id="3">Aller et retour</option>
         </select>
         <BR>
-        date du trajet : <input type="date" id="dateDepart" name="dateDepart"min="2019-01-01" required>
+        date du trajet : <input type="date" id="dateDepart" name="dateDepart"min="2019-01-01" max="2999-01-01" required>
         <BR>
         Heure trajet : <input type="time" id="heureDepart" name="heureDepart"min="0:00" max="23:59" required>
         <BR>      
