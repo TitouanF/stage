@@ -3,6 +3,28 @@
 ?>
 <?php
     session_start();
+    if(isset($_SESSION['verif']) && isset($_SESSION['idSalarie']) && isset($_POST['numeroRue']))
+    {
+
+
+        if ($_SESSION['verif'] == "salarie")
+            {
+                
+            }
+            elseif ($_SESSION['verif'] == "admin")
+            {
+                header("Location: accueiladmin.php");
+            }
+            else
+            {
+                header("Location: afficherlogin.php");
+            }
+    }
+    else
+    {
+        header("Location: afficherlogin.php");
+    }
+    
     require_once('connexion.php');
     $idSalarie =  $_SESSION['idSalarie'];
     $numeroRue = $_POST['numeroRue'];

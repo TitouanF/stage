@@ -30,6 +30,6 @@
       }
     ?>
     <div class="idinvalide">Mot de passe non valide</div>
-    <a href="deconnection.php">Retour</a>
+    <a href="afficheradmin.html">Retour</a>
   </body>
 </html>

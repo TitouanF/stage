@@ -3,6 +3,27 @@
 ?>
 <?php
   session_start();
+  if(isset($_SESSION['verif']) && $_GET['idtrajet'] )
+  {
+
+
+      if ($_SESSION['verif'] == "salarie")
+          {
+              
+          }
+          elseif ($_SESSION['verif'] == "admin")
+          {
+              header("Location: accueiladmin.php");
+          }
+          else
+          {
+              header("Location: afficherlogin.php");
+          }
+  }
+  else
+  {
+      header("Location: afficherlogin.php");
+  }
   $idSalarie = $_SESSION['idSalarie'];
   $idTrajet = $_GET['idtrajet'];
 

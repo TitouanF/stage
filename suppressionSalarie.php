@@ -3,7 +3,7 @@
 ?>
 <?php
   session_start();
-  if(issert($_SESSION['verif']))
+  if(isset($_SESSION['verif']))
   {
 
 

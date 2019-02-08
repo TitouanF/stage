@@ -24,37 +24,38 @@
   <body>
   <?php
     session_start();
+    if ($_SESSION['verif'] == "salarie" && isset($_GET['idtrajet']))
+    {
+      $requet = $connection->query("SELECT trajet.idSalarie idsal FROM trajet WHERE identifiant = '$idTrajet'");
+      $requet->setFetchMode(PDO::FETCH_OBJ);
+      while($enregist = $requet->fetch())
+      {
+        if ($enregist->idsal == $idSalarie)
+        {
+
+        }
+        else
+        {
+          header("Location: voirmespropositiontrajet.php");
+        }
+      }
+    }
+    elseif ($_SESSION['verif'] == "salarie" && !isset($_POST['choixVille']))
+    {
+      header("Location: accueilsalarie.php");
+    }
+    elseif ($_SESSION['verif'] == "admin")
+    {
+      header("Location: accueiladmin.php");
+    }
+    else
+    {
+      header("Location: afficherlogin.php");
+    }
     require_once('connexion.php'); // once : le fichier ne peut être inclus qu'une fois
     $idSalarie = $_SESSION['idSalarie'];
     $idTrajet = $_GET['idtrajet'];
-    if ($_SESSION['verif'] == "salarie" && isset($_GET['idtrajet']))
-          {
-            $requet = $connection->query("SELECT trajet.idSalarie idsal FROM trajet WHERE identifiant = '$idTrajet'");
-            $requet->setFetchMode(PDO::FETCH_OBJ);
-            while($enregist = $requet->fetch())
-            {
-              if ($enregist->idsal == $idSalarie)
-              {
-
-              }
-              else
-              {
-                header("Location: voirmespropositiontrajet.php");
-              }
-            }
-          }
-          elseif ($_SESSION['verif'] == "salarie" && !isset($_POST['choixVille']))
-          {
-            header("Location: accueilsalarie.php");
-          }
-          elseif ($_SESSION['verif'] == "admin")
-          {
-            header("Location: accueiladmin.php");
-          }
-          else
-          {
-            header("Location: afficherlogin.php");
-          }
+   
     ?>
     <h1>Modification du trajet</h1>
     <form action="modifierTrajetFin.php" method="post">
