@@ -24,11 +24,28 @@
   <body>
   <?php
     session_start();
+    require_once('connexion.php'); // once : le fichier ne peut être inclus qu'une fois
     $idSalarie = $_SESSION['idSalarie'];
     $idTrajet = $_GET['idtrajet'];
-    if ($_SESSION['verif'] == "salarie")
+    if ($_SESSION['verif'] == "salarie" && isset($_GET['idtrajet']))
           {
-            
+            $requet = $connection->query("SELECT trajet.idSalarie idsal FROM trajet WHERE identifiant = '$idTrajet'");
+            $requet->setFetchMode(PDO::FETCH_OBJ);
+            while($enregist = $requet->fetch())
+            {
+              if ($enregist->idsal == $idSalarie)
+              {
+
+              }
+              else
+              {
+                header("Location: voirmespropositiontrajet.php");
+              }
+            }
+          }
+          elseif ($_SESSION['verif'] == "salarie" && !isset($_POST['choixVille']))
+          {
+            header("Location: accueilsalarie.php");
           }
           elseif ($_SESSION['verif'] == "admin")
           {
@@ -42,7 +59,6 @@
     <h1>Modification du trajet</h1>
     <form action="modifierTrajetFin.php" method="post">
       <?php   
-          require_once('connexion.php'); // once : le fichier ne peut être inclus qu'une fois
           // Envoi de la requête vers MySQL   
           $select = $connection->query("SELECT ville.nom nom, trajet.dateTrajet datet, trajet.heure heure, trajet.typeTrajet typet, trajet.frequence frequence FROM ville, trajet WHERE ville.codePostal = trajet.codeVille AND trajet.identifiant = '$idTrajet'");
           // Les résultats retournés par la requête seront traités en 'mode' objet   
@@ -215,9 +231,12 @@
       function supprLigne()
       {
         nbEtape = document.getElementById('nbEtape').value;
-        nbEtape = parseInt(nbEtape) - 1;
-        document.getElementById('nbEtape').value = nbEtape;
-        document.getElementById('tabEtapes').deleteRow(-1);
+        if(nbEtape > 0)
+        {
+          nbEtape = parseInt(nbEtape) - 1;
+          document.getElementById('nbEtape').value = nbEtape;
+          document.getElementById('tabEtapes').deleteRow(-1);
+        }
         if(nbEtape < 9)
         {
           $('#ajoutL').html("<button type='button' onclick='ajoutLigne()'>Ajouter une Etape</button>");
