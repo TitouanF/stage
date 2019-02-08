@@ -1,6 +1,6 @@
 <?php
     require_once('connexion.php');
-    if(issert($_SESSION['verif']))
+    if(isset($_SESSION['verif']))
     {
     if ($_SESSION['verif'] == "admin")
           {

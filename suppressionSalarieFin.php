@@ -1,10 +1,10 @@
 <?php
      session_start();
      //Vérifie si l'utilisateur est connecté avant de montrer la page
-     if (!issset($_POST['id']))
+     if (!isset($_POST['id']))
      {
 
-        if (issset($_SESSION['verif']))
+        if (isset($_SESSION['verif']))
         {
             if ($_SESSION['verif'] == "admin")
             {  
