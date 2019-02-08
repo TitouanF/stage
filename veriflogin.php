@@ -1,4 +1,7 @@
 <?php
+  header('Content-type: text/html; charset=UTF-8');
+?>
+<?php
   //Permet de ne pas afficher les erreurs au client quand il rentre des identifiants non valide
   ini_set("display_errors",0);error_reporting(0);
   session_start();

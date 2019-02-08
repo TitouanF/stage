@@ -1,4 +1,7 @@
 <?php
+  header('Content-type: text/html; charset=UTF-8');
+?>
+<?php
   session_start();
   //Vérifie si l'utilisateur est connecté avant de montrer la page
   if ($_SESSION['verif'] == "salarie")
@@ -84,5 +87,5 @@
        </select><BR>
        <input type="submit" value="Valider">   
        </form>
-       <a href="accueilsalarie.php"><button>Annuler les modifications</button></a>
+       <a href="accueilsalarie.php"><button>Retour</button></a>
 </html>

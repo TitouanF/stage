@@ -1,4 +1,7 @@
 <?php
+  header('Content-type: text/html; charset=UTF-8');
+?>
+<?php
     require_once('connexion.php');
     session_start();
     if ($_SESSION['verif'] == "salarie" && isset($_POST['choixVille']))

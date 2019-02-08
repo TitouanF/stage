@@ -1,7 +1,10 @@
 <?php
+  header('Content-type: text/html; charset=UTF-8');
+?>
+<?php
     require_once('connexion.php');
     session_start();
-    if ($_SESSION['verif'] == "salarie" && isset($_POST['choixVille']))
+    if ($_SESSION['verif'] == "salarie" && isset($_POST['idTrajet']))
     {
         $identifiant =  $_SESSION['idSalarie'];
         $idTrajet = $_POST['idTrajet'];
@@ -11,7 +14,7 @@
         $date = $_POST['dateDepart'];
         $heure = $_POST['heureDepart'];
         $max = $_POST['nbEtape'];
-
+        echo $idTrajet;
         //Récupération du code ville pour modifier la ville du trajet
         $requete = "SELECT codePostal FROM ville WHERE nom = '".$ville."'";
         $result = $connection->query($requete);
@@ -54,9 +57,9 @@
             }
         }
     }
-    elseif ($_SESSION['verif'] == "salarie" && !isset($_POST['choixVille']))
+    elseif ($_SESSION['verif'] == "salarie")
     {
-        header("Location: modifierTrajet.php");
+        header("Location: voirmespropositiontrajet.php");
     }
     elseif ($_SESSION['verif'] == "admin")
     {

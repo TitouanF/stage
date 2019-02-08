@@ -1,10 +1,13 @@
 <?php
+  header('Content-type: text/html; charset=UTF-8');
+?>
+<?php
   session_start();
   $idSalarie = $_SESSION['idSalarie'];
   $idTrajet = $_GET['idtrajet'];
 
   //Vérifie si l'utilisateur est connecté avant de montrer la page
-  if ($_SESSION['verif'] == "salarie")
+  if ($_SESSION['verif'] == "salarie" && isset($_GET['idtrajet']))
   {
     require_once('connexion.php');
     $select = $connection->query("SELECT trajet.idSalarie idsal, ville.nom nomville FROM trajet, ville WHERE trajet.codeVille = ville.codePostal AND identifiant = '$idTrajet'");
@@ -25,6 +28,10 @@
         echo("<html>");
       }
     }
+  }
+  elseif ($_SESSION['verif'] == "salarie" && !isset($_GET['idtrajet']))
+  {
+      header("Location: accueilsalarie.php");
   }
   elseif ($_SESSION['verif'] == "admin")
   {

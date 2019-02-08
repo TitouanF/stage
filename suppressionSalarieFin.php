@@ -1,4 +1,7 @@
 <?php
+  header('Content-type: text/html; charset=UTF-8');
+?>
+<?php
      session_start();
      //Vérifie si l'utilisateur est connecté avant de montrer la page
      if (!isset($_POST['id']))
@@ -23,7 +26,7 @@
         {
             header("Location: afficherlogin.php");
         }
-        }
+    }
     else
     {
         header("Location: suppressionSalarie.php");

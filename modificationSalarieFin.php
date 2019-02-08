@@ -1,4 +1,7 @@
 <?php
+  header('Content-type: text/html; charset=UTF-8');
+?>
+<?php
     session_start();
     require_once('connexion.php');
     $idSalarie =  $_SESSION['idSalarie'];

@@ -1,3 +1,6 @@
+<?php
+  header('Content-type: text/html; charset=UTF-8');
+?>
 <html>
   <head>
     <title>ajouter un trajet</title>
@@ -78,7 +81,7 @@
         <span id="AfficheEtapes"></span>
         <input type="submit" name="valid" value="ajouter"/>    
       </form>
-      <a href="voirmespropositiontrajet.php"><button>Retour</button></a>
+      <a href="accueilsalarie.php"><button>Retour</button></a>
       <script>
         function afficheEtapes()
         {
