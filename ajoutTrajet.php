@@ -77,7 +77,8 @@
         <BR>
         <span id="AfficheEtapes"></span>
         <input type="submit" name="valid" value="ajouter"/>    
-      </form> 
+      </form>
+      <a href="voirmespropositiontrajet.php"><button>Retour</button></a>
       <script>
         function afficheEtapes()
         {
