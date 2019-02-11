@@ -14,7 +14,6 @@
         $date = $_POST['dateDepart'];
         $heure = $_POST['heureDepart'];
         $max = $_POST['nbEtape'];
-        echo $idTrajet;
         //Récupération du code ville pour modifier la ville du trajet
         $requete = "SELECT codePostal FROM ville WHERE nom = '".$ville."'";
         $result = $connection->query($requete);

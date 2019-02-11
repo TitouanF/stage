@@ -23,9 +23,10 @@
   </head>
   <body>
   <?php
-  require_once('connexion.php');
-
+    require_once('connexion.php');
     session_start();
+    $idSalarie = $_SESSION['idSalarie'];
+
     if ($_SESSION['verif'] == "salarie" && isset($_GET['idtrajet']))
     {
       $idTrajet = $_GET['idtrajet'];
@@ -55,9 +56,6 @@
     {
       header("Location: afficherlogin.php");
     }
-    require_once('connexion.php'); // once : le fichier ne peut être inclus qu'une fois
-    $idSalarie = $_SESSION['idSalarie'];
-    $idTrajet = $_GET['idtrajet'];
    
     ?>
     <h1>Modification du trajet</h1>

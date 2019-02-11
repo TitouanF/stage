@@ -132,7 +132,7 @@
                     }       
                     echo("</select></td>");
 
-                    echo("<td><a href='modifiertrajet.php?idtrajet=".$enregistrement->idt."'><button>Modifier</button></a></td>");
+                    echo("<td><a href='modifierTrajet.php?idtrajet=".$enregistrement->idt."'><button>Modifier</button></a></td>");
                     echo("<td><a href='suppressionTrajet.php?idtrajet=".$enregistrement->idt."'><button>Supprimer</button></a></td></tr>");
                 }
             }
