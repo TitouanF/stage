@@ -182,8 +182,6 @@
           echo "</select>";
         ?>
         <BR><BR>
-        nombre de places : <input type="number" id="nombrePlace" name="nombrePlace" min="1" max="9" required>
-        <BR><BR>
         fréquence : 
         <select id="choixFrequence" name='choixFrequence'required>
           <option id="1">Quotidien</option>
@@ -197,6 +195,9 @@
           <option id="3">Aller et retour</option>
         </select>
         <BR><BR>
+        nombre de places : <input type="number" id="nombrePlace" name="nombrePlace" min="1" max="9" required>
+        <BR><BR>
+       
         date du trajet : <input type="date" id="dateDepart" name="dateDepart"min="2019-01-01" max="2999-01-01" required>
         <BR><BR>
         Heure trajet : <input type="time" id="heureDepart" name="heureDepart"min="0:00" max="23:59" required>
