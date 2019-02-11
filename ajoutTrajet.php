@@ -182,7 +182,7 @@
           echo "</select>";
         ?>
         <BR><BR>
-        fréquence : 
+        fréquence du trajet : 
         <select id="choixFrequence" name='choixFrequence'required>
           <option id="1">Quotidien</option>
           <option id="2">Exceptionnel</option>
