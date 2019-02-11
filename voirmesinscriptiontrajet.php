@@ -27,9 +27,13 @@
         border: 1px solid black;
         }
 
-        table {
+        table 
+        {
+        
         border-collapse: collapse;
         width: 50%;
+        margin-left:auto;
+        margin-right:auto;
         }
 
         th {
@@ -38,6 +42,15 @@
         th, td {
         padding: 15px;
         text-align: left;
+        }
+        body 
+        {
+         background: #76b852;
+         text-align: center;
+        }
+        table 
+        {
+        background: #DCDCDC;
         }
     </style>
   </head>
@@ -57,8 +70,7 @@
             header("Location: afficherlogin.php");
         }
     ?>
-    <div style="padding: 5px">
-        Mes Inscriptions :
+       <h1> Mes Inscriptions :</h1>
         <br>
             <?php
             //echo "".$idSalarie."";
@@ -113,11 +125,11 @@
             }
             elseif($nbr == 0)
             {
-                echo("Aucune Inscriptions");
+                echo("Aucune Inscription");
             }
             ?>
         </table>
         <a href="accueilsalarie.php"><button>Retour</button></a>
-    </div>
+        
   </body>
 </html>

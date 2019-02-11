@@ -23,9 +23,12 @@
   </head>
   <body>
   <?php
+  require_once('connexion.php');
+
     session_start();
     if ($_SESSION['verif'] == "salarie" && isset($_GET['idtrajet']))
     {
+      $idTrajet = $_GET['idtrajet'];
       $requet = $connection->query("SELECT trajet.idSalarie idsal FROM trajet WHERE identifiant = '$idTrajet'");
       $requet->setFetchMode(PDO::FETCH_OBJ);
       while($enregist = $requet->fetch())

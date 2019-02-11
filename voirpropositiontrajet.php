@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <style>
+    @import url(https://fonts.googleapis.com/css?family=Roboto:300);
         table, td, th {
         border: 1px solid black;
         }
@@ -26,6 +27,42 @@
         th, td {
         padding: 15px;
         text-align: left;
+        }
+                
+        .login-page 
+        {
+        width: 360px;
+        padding: 8% 0 0;
+        margin: auto;
+        }
+        table, td, th {
+        border: 1px solid black;
+        }
+
+        table 
+        {
+        
+        border-collapse: collapse;
+        width: 50%;
+        margin-left:auto;
+        margin-right:auto;
+        }
+
+        th {
+        height: 50px;
+        }
+        th, td {
+        padding: 15px;
+        text-align: left;
+        }
+        body 
+        {
+         background: #76b852;
+         text-align: center;
+        }
+        table 
+        {
+        background: #DCDCDC;
         }
     </style>
   </head>
@@ -46,7 +83,7 @@
         }
     ?>
     <div style="padding: 5px">
-        Les Propositions :
+       <h1> Les Propositions :</h1>
         <br>
             <?php
             //echo "".$idSalarie."";
