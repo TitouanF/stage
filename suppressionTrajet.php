@@ -1,6 +1,26 @@
 <?php
   header('Content-type: text/html; charset=UTF-8');
-?>
+  ?>
+  <html>
+  <head>
+  <style>
+   body 
+        {
+         background: #76b852;
+         text-align: center;
+        }
+  .form 
+    {
+      position: relative;
+      z-index: 1;
+      background: #FFFFFF;
+      max-width: 360px;
+      margin: 0 auto 100px;
+      padding: 45px;
+      box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    }
+  </style>
+  </head>
 <?php
   session_start();
   if(isset($_SESSION['verif']) && $_GET['idtrajet'] )
@@ -51,14 +71,15 @@
     {
       if ($enregistrement->idsal == $idSalarie)
       {
-        echo("<html>");
         echo("<body>");
+        echo("<div class='form'");
         echo("<form action='suppressionTrajetFin.php' method='post'");
         echo("<h1>Confirmer la supression du trajet ".$enregistrement->nomville." ?</h1>");
-        echo("<button type='submit' value='Valider'>Valider</button></a>");
+        echo("<BR><button type='submit' value='Valider'>Valider</button></a>");
         echo("<input id='idtraj' name='idtraj' type='hidden' value='$idTrajet'>");
         echo("<a href='voirmespropositiontrajet.php'><button type='button'>Annuler</button></a>");
         echo("</form>");
+        echo("</div>");
         echo("<body>");
         echo("<html>");
       }

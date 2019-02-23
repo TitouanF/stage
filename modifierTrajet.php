@@ -1,15 +1,20 @@
 <html>
-  <head>
-    <title>Modifier Trajet</title>
+<head>
+<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+    <title>Voir Trajet</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <style>
+    @import url(https://fonts.googleapis.com/css?family=Roboto:300);
         table, td, th {
         border: 1px solid black;
         }
 
         table {
         border-collapse: collapse;
-        width: 15%;
+        width: 50%;
         }
 
         th {
@@ -19,7 +24,44 @@
         padding: 15px;
         text-align: left;
         }
+                
+        .login-page 
+        {
+        width: 360px;
+        padding: 8% 0 0;
+        margin: auto;
+        }
+        table, td, th {
+        border: 1px solid black;
+        }
+
+        table 
+        {
+        
+        border-collapse: collapse;
+        width: 50%;
+        margin-left:auto;
+        margin-right:auto;
+        }
+
+        th {
+        height: 50px;
+        text-align: center;
+        }
+        th, td {
+        padding: 15px;
+        }
+        body 
+        {
+         background: #76b852;
+         text-align: center;
+        }
+        table 
+        {
+        background: #DCDCDC;
+        }
     </style>
+  </head>
   </head>
   <body>
   <?php
@@ -168,7 +210,6 @@
           echo("<tr>");
           echo("<th>Ville</th>");
           echo("</tr>");
-
           $req3=$connection->query("SELECT ville.nom nom FROM ville, trajet, etapes WHERE ville.codePostal = etapes.CodePostal AND trajet.identifiant = etapes.idTrajet AND trajet.identifiant = '$idTrajet'");
           $req3->setFetchMode(PDO::FETCH_OBJ);
           $nbr=$req3->rowCount();
