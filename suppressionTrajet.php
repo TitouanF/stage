@@ -72,13 +72,13 @@
       if ($enregistrement->idsal == $idSalarie)
       {
         echo("<body>");
-        echo("<div class='form'");
-        echo("<form action='suppressionTrajetFin.php' method='post'");
+        echo("<div class='form'>");
+        echo("<form action='suppressionTrajetFin.php' method='post'>");
         echo("<h1>Confirmer la supression du trajet ".$enregistrement->nomville." ?</h1>");
-        echo("<BR><button type='submit' value='Valider'>Valider</button></a>");
+        echo("<BR><input type='submit' value='Valider'>");
         echo("<input id='idtraj' name='idtraj' type='hidden' value='$idTrajet'>");
-        echo("<a href='voirmespropositiontrajet.php'><button type='button'>Annuler</button></a>");
         echo("</form>");
+        echo("<a href='voirmespropositiontrajet.php'><button type='button'>Annuler</button></a>");
         echo("</div>");
         echo("<body>");
         echo("<html>");
