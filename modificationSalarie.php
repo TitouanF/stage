@@ -32,7 +32,7 @@
 ?>
 <html>
 <head>
-    <title>désinscription trajet</title>
+    <title>modifications informations</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
@@ -166,7 +166,7 @@
        numero rue : <input type="number" name="numeroRue" min="1" value='<?php echo $numAdresse ?>' pattern="^[0-9]+$" required><BR>
        nom rue : <input type="text" name="nomRue" value='<?php echo $voieAdresse ?>' pattern="^[a-zA-Z0-9\s]+$"required><BR>
        email : <input type="email" name="mailSalarie"  value='<?php  echo $email ?>' pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required><BR>
-       numéro téléphone (tout attaché) : <input type="text" value='<?php echo $telephone ?>' name="numeroSalarie" pattern="^0[1-6]{1}(([0-9]{2}){4})|((\s[0-9]{2}){4})|((-[0-9]{2}){4})$" required><BR>
+       numéro téléphone (tout attaché) : <input type="text" value='<?php echo $telephone ?>' name="numeroSalarie" pattern="^0[1-7]{1}(([0-9]{2}){4})|((\s[0-9]{2}){4})|((-[0-9]{2}){4})$" required><BR>
        préférences : 
        <select id="choixType" name="choixType" required>
        <?php 

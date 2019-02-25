@@ -69,5 +69,5 @@
         header("Location: afficherlogin.php");
     }
 ?>
-<h1> Trajet modifie </h1>
+<h1> Trajet modifié </h1>
 <a href ="voirmespropositiontrajet.php"> retour</a>

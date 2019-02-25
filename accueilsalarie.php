@@ -177,7 +177,7 @@
   <a href="voirmespropositiontrajet.php"><button>Voir mes propositions de Trajets</button></a><BR><BR>
   <a href="ModificationSalarie.php"><button>Modifier mes informations</button></a>
   <BR><BR>
-  <a class="monBoutton" href="deconnection.php">Deconnexion</a>
+  <a class="monBoutton" href="deconnexion.php">Deconnexion</a>
   </div>
   </body>
 </html>

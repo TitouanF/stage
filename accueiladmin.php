@@ -181,7 +181,7 @@
     <a href="ajoutSalarie.php"><button >Ajouter un salarie</button></a><BR><BR>
         <a href="choixSalarieSuppression.php"><button>Supprimer un salarie</button></a>
     <BR>
-    <a class="monBoutton" href="deconnection.php">Deconnexion</a>
+    <a class="monBoutton" href="deconnexion.php">Deconnexion</a>
   </div>
       </div>
   </body>

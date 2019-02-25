@@ -161,7 +161,7 @@
        <input type="number" name="numeroRue" pattern="^[0-9]+$" placeholder="numéro rue" required><BR>
        <input type="text" name="nomRue" pattern="^[a-zA-Z0-9\s]+$" placeholder="nom de la rue" required><BR>
        <input type="email" name="mailSalarie" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="adresse mail" required><BR>
-      <input type="text" name="numeroSalarie" pattern="^0[1-6]{1}(([0-9]{2}){4})|((\s[0-9]{2}){4})|((-[0-9]{2}){4})$" placeholder="numéro téléphone" required><BR>
+      <input type="text" name="numeroSalarie" pattern="^0[1-7]{1}(([0-9]{2}){4})|((\s[0-9]{2}){4})|((-[0-9]{2}){4})$" placeholder="numéro téléphone" required><BR>
       <div class="titre">préférences : 
        <select id="choixType" name="choixType" class="btn btn-primary dropdown-toggle" required>
         <option id="1">Aller</option>
