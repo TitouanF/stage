@@ -73,7 +73,6 @@
        <h1> Mes Inscriptions :</h1>
         <br>
             <?php
-            //echo "".$idSalarie."";
             
             require_once('connexion.php');
 

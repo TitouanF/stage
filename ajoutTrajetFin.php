@@ -55,7 +55,7 @@
                                 {
 
                                     $requete2 = "INSERT INTO etapes (`idTrajet`, `CodePostal`) VALUES ('".$id."', '".$cp."')";
-                                    echo $requete2;
+                                    //echo $requete2;
                                     $connection->exec($requete2);
                                 }
                             catch (Exception $e) 
