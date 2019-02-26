@@ -262,7 +262,7 @@
     <input type='hidden' id='idTrajet' name='idTrajet' value='<?php echo $idTrajet ?>'>
     <button type='button' onclick='supprLigne()'>Supprimer la derniere etape</button>
     <BR><BR>
-    <input type='submit' value='Modifier'>
+    <input type='submit' value='valider les modifications'>
     <a href="modifierTrajet.php?idtrajet=<?php echo $idTrajet ?>"><button type="button">Annuler</button></a>
     <?php
       echo("<a href='suppressionTrajet.php?idtrajet=".$idTrajet."'><button type='button'>Supprimer le Trajet</button></a>");

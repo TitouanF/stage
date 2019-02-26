@@ -170,7 +170,10 @@
         echo "<input type='submit' value='Valider'>";
         echo "</form>";
         ?>
+        <a href="accueiladmin.php">annuler</a>
         </div>
+        
     </div>
+    
         </body>
 </html>

@@ -1,6 +1,7 @@
 <?php
     header('Content-type: text/html; charset=UTF-8');
     require_once('connexion.php');
+    session_start();
     if(isset($_SESSION['verif']))
     {
     if ($_SESSION['verif'] == "admin")
